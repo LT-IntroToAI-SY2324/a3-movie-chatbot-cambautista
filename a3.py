@@ -165,8 +165,10 @@ def title_by_director(matches: List[str]) -> List[str]:
     """
     results = []
     for movie in movie_db:
-        if int(matches[0]) == 
-    #need to finsh
+        if get_director(movie) == matches [0]:
+            results.append(get_title(movie))
+    #printresults
+    return results
 
 
 
@@ -179,7 +181,12 @@ def actors_by_title(matches: List[str]) -> List[str]:
     Returns:
         a list of actors who acted in the passed in title
     """
-    pass
+    results = []
+    for movie in movie_db:
+        if get_title(movie) == matches [0]:
+            results= get_actors(movie))
+    #printresults
+    return results
 
 
 def year_by_title(matches: List[str]) -> List[int]:
