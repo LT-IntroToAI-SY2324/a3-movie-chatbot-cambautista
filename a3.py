@@ -184,7 +184,7 @@ def actors_by_title(matches: List[str]) -> List[str]:
     results = []
     for movie in movie_db:
         if get_title(movie) == matches [0]:
-            results= get_actors(movie))
+            results= get_actors(movie)
     #printresults
     return results
 
@@ -198,7 +198,12 @@ def year_by_title(matches: List[str]) -> List[int]:
     Returns:
         a list of one item (an int), the year that the movie was made
     """
-    pass
+    results = []
+    for movie in movie_db:
+        if get_title(movie) == matches [0]:
+            results.append(get_year(movie))
+    #print results
+    return results
 
 
 def title_by_actor(matches: List[str]) -> List[str]:
@@ -210,7 +215,13 @@ def title_by_actor(matches: List[str]) -> List[str]:
     Returns:
         a list of movie titles that the actor acted in
     """
-    pass
+    results= []
+    for movie in movie_db:
+        if matches[0] in get_actors(movie):
+            results.append(get_title(movie))
+    #print (results)
+    return results
+
 
 
 # dummy argument is ignored and doesn't matter
@@ -249,7 +260,13 @@ def search_pa_list(src: List[str]) -> List[str]:
         a list of answers. Will be ["I don't understand"] if it finds no matches and
         ["No answers"] if it finds a match but no answers
     """
-    pass
+    for pat, act in pa_list:
+        mat= match(pat, src)
+        if mat is not None:
+            answer = act(mat)
+            #print answer
+            return answer if answer else ["No answers"]
+    return ["I don't understand"]
 
 
 def query_loop() -> None:
