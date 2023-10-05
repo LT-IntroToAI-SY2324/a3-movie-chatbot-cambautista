@@ -435,4 +435,17 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "spike lee",
         ],
     )
+    (
+        "breakfast at tiffanys",
+        "blake edwards",
+        1961,
+        [
+            "audrey hepburn",
+            "george peppard",
+            "mickey rooney",
+            "patricia neal",
+            "buddy ebsen",
+            "martin balsam",
+        ],
+    )
 ]

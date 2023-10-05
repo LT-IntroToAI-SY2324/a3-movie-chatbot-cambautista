@@ -245,6 +245,8 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("when was % made"), year_by_title),
     (str.split("in what movies did % appear"), title_by_actor),
     (["bye"], bye_action),
+    (str.split("what movies were produced in _"), title_by_year),
+
 ]
 
 
